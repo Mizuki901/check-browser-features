@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <title>Check Browser Features</title>
+  <p>
+    Check User Agent:
+    <br>
+    <a href="https://testpage.jp/tool/ip_user_agent.php">https://testpage.jp/tool/ip_user_agent.php</a>  
+  </p>
+  <p>
+    Available Javascript and Cookie?
+    <br>
+    <a href="https://www.yakujihou.org/netmember/html/java_check.html">https://www.yakujihou.org/netmember/html/java_check.html</a>  
+  </p>
+  <button onclick="alert(isAvailableLocalStorage())">Available LocalStorage?</button>
+  <button onclick="alert(isAvailableSessionStorage())">Available SessionStorage?</button>
+  <br>
+</body>
+<script>
+  function isAvailableLocalStorage () {
+    var dummy = 'dummy';
+    try {
+      localStorage.setItem(dummy, dummy);
+      localStorage.removeItem(dummy);
+      return 'available';
+    } catch (err) {
+      return 'unavailable';
+    }
+  }
+  function isAvailableSessionStorage () {
+    var dummy = 'dummy';
+    try {
+      sessionStorage.setItem(dummy, dummy);
+      sessionStorage.removeItem(dummy);
+      return 'available';
+    } catch (err) {
+      return 'unavailable';
+    }
+  }
+</script>
+</html>
